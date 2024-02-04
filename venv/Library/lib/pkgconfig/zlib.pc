@@ -1,0 +1,13 @@
+prefix=E:/SELF WORK/ONLINE COURSES MATERIAL/KRISH NAIK/ATS USING GOOGLE GEMINI PRO/venv/Library
+exec_prefix=E:/SELF WORK/ONLINE COURSES MATERIAL/KRISH NAIK/ATS USING GOOGLE GEMINI PRO/venv/Library
+libdir=E:/SELF WORK/ONLINE COURSES MATERIAL/KRISH NAIK/ATS USING GOOGLE GEMINI PRO/venv/Library/lib
+sharedlibdir=E:/SELF WORK/ONLINE COURSES MATERIAL/KRISH NAIK/ATS USING GOOGLE GEMINI PRO/venv/Library/lib
+includedir=E:/SELF WORK/ONLINE COURSES MATERIAL/KRISH NAIK/ATS USING GOOGLE GEMINI PRO/venv/Library/include
+
+Name: zlib
+Description: zlib compression library
+Version: 1.2.13
+
+Requires:
+Libs: -L${libdir} -L${sharedlibdir} -lz
+Cflags: -I${includedir}
