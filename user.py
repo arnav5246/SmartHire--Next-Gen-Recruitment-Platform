@@ -36,10 +36,16 @@ def get_gemini_response_with_pdf_and_jd(input, pdf_content, input_text):
     response = model.generate_content(combined_input)
     return response.text
 
+def get_gemini_response_with_jd(input, input_text):
+    model = genai.GenerativeModel('gemini-pro')
+    # Combine the input prompt with the PDF content
+    combined_input = f"{input}\n\n{input_text}"
+    response = model.generate_content(combined_input)
+    return response.text
 
 # New Changes
-st.header("JobFit Analyzer")
-st.subheader('This Application helps you in your Resume Review with help of GEMINI AI [LLM]')
+st.header("SmartHire: ")
+st.subheader('This Application helps you in your Resume Review with help of GEMINI LLM')
 input_text = st.text_input("Job Description: ", key="input")
 uploaded_file = st.file_uploader("Upload your Resume(PDF)...", type=["pdf"])
 pdf_content = ""
@@ -49,13 +55,15 @@ if uploaded_file is not None:
 
 submit1 = st.button("Tell Me About the Resume")
 
-submit2 = st.button("How Can I Improvise my Skills")
+submit2 = st.button("How Can I Improve my Skills")
 
 submit3 = st.button("What are the Keywords That are Missing")
 
 submit4 = st.button("Percentage match")
 
-submit5 = st.button("Extraction")
+submit5 = st.button("Submit")
+
+# submit6 = st.button("JD Extraction")
 
 input_prompt1 = """
  You are an experienced Technical Human Resource Manager, your task is to review the provided resume against the job description.
@@ -99,6 +107,17 @@ The output should be in the below order only.
     "Education": [B.Tech in Computer Science and Engineering, SRM Institute of Science and Technology, Kattankulathur, 09/2020 - Present]}
     Use this as an example only.
 """ 
+# input_prompt6 = """
+# You are a skilled ATS (Applicant Tracking System) scanner with a deep understanding of data science and ATS functionality, 
+# your task is to extract the job description entered on the different sections like job title, skills required, eligibility criteria 
+# of candidate etc. 
+# Output should be in a string like below example:
+# "Job Title: Front-end Web Developer Skills Required: HTML CSS JavaScript PHP WordPress WooCommerce UI/UX design Graphic design 
+# REST API development Relational databases (e.g., MySQL) Agile and test-driven development best practices Eligibility Criteria: 
+# Bachelor's degree in computer science, web development, software development, or related field Web development fundamentals including 
+# HTML, CSS, and JavaScript Front-end JavaScript frameworks such as Vue, React, and Angular Back-end frameworks such as Ruby on Rails, 
+# Node.js, and ASP.NET Content management systems (CMSs) such as WordPress, Joomla, and Squarespace"
+# """
 
 if submit1:
     if uploaded_file is not None:
@@ -140,12 +159,20 @@ elif submit5:
     if uploaded_file is not None:
         pdf_content = input_pdf_text(uploaded_file)
         response = get_gemini_response_with_pdf(input_prompt5, pdf_content)
-        st.subheader("The Response is")
-        st.write(response)
+        st.subheader("Your Resume is Submitted ")
+        # st.write(response)
         data_dict = json.loads(response)
         convert_to_excel(data_dict)
     else:
         st.write("Please upload a PDF file to proceed.")
+
+# elif submit6:
+#     if input_text is not None:
+#         response = get_gemini_response_with_jd(input_prompt6, input_text)
+#         st.subheader("The Response is")
+#         st.write(response)
+#     else:
+#         st.write("Please enter a Job Description to proceed.")
 
 st.markdown("---")
 st.caption("Resume Expert - Making Job Applications Easier")
