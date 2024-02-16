@@ -44,7 +44,7 @@ def get_gemini_response_with_jd(input, input_text):
     return response.text
 
 # New Changes
-st.header("SmartHire")
+st.header("SmartHire: Next-Gen Recruitment Platform")
 st.subheader('This Application helps you choose best candidate for job')
 input_text = st.text_input("Job Description: ", key="input")
 uploaded_file = st.file_uploader("Upload your Resume(PDF)...", type=["pdf"])
