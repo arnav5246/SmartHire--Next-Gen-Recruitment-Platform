@@ -175,4 +175,4 @@ elif submit5:
 #         st.write("Please enter a Job Description to proceed.")
 
 st.markdown("---")
-st.caption("Resume Expert - Making Job Applications Easier")
+st.caption("SmartHire: Next-Gen Recruitment Platform")
