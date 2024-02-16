@@ -71,3 +71,6 @@ if submit1:
         # convert_to_text(response)
     else:
         st.write("Please enter a Job Description to proceed.")
+
+st.markdown("---")
+st.caption("SmartHire: Next-Gen Recruitment Platform")
