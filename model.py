@@ -5,7 +5,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
 def preprocess(JD):
-  resume_data = pd.read_csv('data.csv')
+  resume_data = pd.read_csv('data.csv', encoding = 'latin-1')
   resume_data.replace('[]', ' ', inplace=True)
   resume_data = resume_data.drop_duplicates(subset='Name', keep='first',ignore_index=True)
   resume_data.fillna(' ', inplace=True)
@@ -30,7 +30,7 @@ def preprocess(JD):
     index = movie[0]
     title_from_index = resume_data[resume_data.index == index]['Name'].values[0]
     if i < 30:
-        output_string += f"{i} - {title_from_index} - {movie[1]}\n\n"
+        output_string += f"{i} - {title_from_index}\n\n"
         i += 1
 
   return output_string
