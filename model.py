@@ -30,7 +30,7 @@ def preprocess(JD):
     index = movie[0]
     title_from_index = resume_data[resume_data.index == index]['Name'].values[0]
     if i < 30:
-        output_string += f"{i} - {title_from_index}\n\n"
+        output_string += f"{i} - {title_from_index} - {((movie[1]+1)*75):.2f}%\n\n"
         i += 1
 
   return output_string
