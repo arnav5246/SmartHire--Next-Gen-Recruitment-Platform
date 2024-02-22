@@ -14,28 +14,6 @@ def get_gemini_response(input):
     response = model.generate_content(input)
     return response.text
 
-def input_pdf_text(uploaded_file):
-    reader = pdf.PdfReader(uploaded_file)
-    text = ""
-    for page in range(len(reader.pages)):
-        page = reader.pages[page]
-        text += str(page.extract_text())
-    return text
-
-def get_gemini_response_with_pdf(input, pdf_content):
-    model = genai.GenerativeModel('gemini-pro')
-    # Combine the input prompt with the PDF content
-    combined_input = f"{input}\n\n{pdf_content}"
-    response = model.generate_content(combined_input)
-    return response.text
-
-def get_gemini_response_with_pdf_and_jd(input, pdf_content, input_text):
-    model = genai.GenerativeModel('gemini-pro')
-    # Combine the input prompt with the PDF content
-    combined_input = f"{input}\n\n{pdf_content}\n\n{input_text}"
-    response = model.generate_content(combined_input)
-    return response.text
-
 def get_gemini_response_with_jd(input, input_text):
     model = genai.GenerativeModel('gemini-pro')
     # Combine the input prompt with the PDF content
@@ -47,8 +25,6 @@ def get_gemini_response_with_jd(input, input_text):
 st.header("SmartHire: Next-Gen Recruitment Platform")
 st.subheader('Find the Perfect Fit for Your Team')
 input_text = st.text_input("Job Description: ", key="input")
-uploaded_file = st.file_uploader("Upload your Resume(PDF)...", type=["pdf"])
-pdf_content = ""
 
 submit1 = st.button("Submit")
 
@@ -68,7 +44,6 @@ if submit1:
         st.subheader("The Response is")
         answer = preprocess(response)
         st.write(answer)
-        # convert_to_text(response)
     else:
         st.write("Please enter a Job Description to proceed.")
 
