@@ -45,13 +45,15 @@ def get_gemini_response_with_jd(input, input_text):
 
 # New Changes
 st.header("SmartHire: Next-Gen Recruitment Platform")
-st.subheader('This Application helps you in your Resume Review with help of GEMINI LLM')
+st.subheader('Elevate Your Resume with Our Optimization Tools')
 input_text = st.text_input("Job Description: ", key="input")
 uploaded_file = st.file_uploader("Upload your Resume(PDF)...", type=["pdf"])
 pdf_content = ""
 
 if uploaded_file is not None:
     st.write("PDF Uploaded Successfully")
+
+submit5 = st.button("Submit")
 
 submit1 = st.button("Tell Me About the Resume")
 
@@ -60,8 +62,6 @@ submit2 = st.button("How Can I Improve my Skills")
 submit3 = st.button("What are the Keywords That are Missing")
 
 submit4 = st.button("Percentage match")
-
-submit5 = st.button("Submit")
 
 # submit6 = st.button("JD Extraction")
 
