@@ -94,14 +94,10 @@ your task is to evaluate the resume and extract the following information from t
 1.Name  2.Skills  3.Work Experience  4.Projects  5.Certifications  6.Education
 The output should be in the below order only.
 {"Name": "Arnav Jain", "Skills": ["C/C++", "Python", "MySQL", "Machine Learning", "Computer Vision", "Data Science", "Data Analytics", "NLP", "Salesforce", "Swift UI", "HTML", "CSS"], 
-"Work Experience": ["Salesforce Developer, Salesforce, 05/2023 - 07/2023",
-    "Machine Learning Intern, IISc Bangalore, 02/2023 - 10/2023",
-    "AI ML Virtual Internship, Amazon Web Services (AWS), 05/2023 - 07/2023"],   
-    "Projects": ["Brain Tumor Detection Model, 08/2023 - 10/2023",
-    "Cursor Controlled by Retina, 10/2022 - 11/2022",
-    "Twitter Sentiment Analysis, 03/2023 - 05/2023",
-    "Pneumonia Detection, 02/2023 - 05/2023",
-    "Car Price Predictor, 11/2022 - 12/2022"], "Certifications": [Trailhead modules & Developer Superset: Salesforce Fundamentals, Automation, Apex programming, Relationship & Process Management.],
+"Work Experience": ["Salesforce Developer, Salesforce, 05/2023 - 07/2023", "Machine Learning Intern, IISc Bangalore, 02/2023 - 10/2023",
+    "AI ML Virtual Internship, Amazon Web Services (AWS), 05/2023 - 07/2023"], "Projects": ["Brain Tumor Detection Model, 08/2023 - 10/2023",
+    "Cursor Controlled by Retina, 10/2022 - 11/2022", "Twitter Sentiment Analysis, 03/2023 - 05/2023",
+    "Pneumonia Detection, 02/2023 - 05/2023", "Car Price Predictor, 11/2022 - 12/2022"], "Certifications": [Trailhead modules & Developer Superset: Salesforce Fundamentals, Automation, Apex programming, Relationship & Process Management.],
     "Education": [B.Tech in Computer Science and Engineering, SRM Institute of Science and Technology, Kattankulathur, 09/2020 - Present]}
     Use this as an example only.
 """ 
