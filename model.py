@@ -31,11 +31,6 @@ def preprocess(JD):
     title_from_index = resume_data[resume_data.index == index]['Name'].values[0]
     if i < 30:
         output_string += f"{i} - {title_from_index} - {((movie[1]+1)*75):.2f}%\n\n"
-        # output_string += f"{i} - {title_from_index} - {((movie[1]+1)*75) if movie[1] > 0.06 else 0:.2f}%\n\n"
         i += 1
 
   return output_string
-
-# if __name__=="__main__":
-#     JD = "Job Title: Front-end Web Developer Skills Required: HTML CSS JavaScript PHP WordPress WooCommerce UI/UX design Graphic design REST API development Relational databases (e.g., MySQL) Agile and test-driven development best practices Eligibility Criteria: Bachelor's degree in computer science, web development, software development, or related field Web development fundamentals including HTML, CSS, and JavaScript Front-end JavaScript frameworks such as Vue, React, and Angular Back-end frameworks such as Ruby on Rails, Node.js, and ASP.NET Content management systems (CMSs) such as WordPress, Joomla, and Squarespace"
-#     print(preprocess(JD))
