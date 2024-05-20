@@ -61,8 +61,6 @@ submit2 = st.button("How Can I Improve my Skills")
 
 submit3 = st.button("What are the Keywords That are Missing")
 
-# submit4 = st.button("Percentage match")
-
 input_prompt1 = """
  You are an experienced Technical Human Resource Manager, your task is to review the provided resume against the job description.
   Please share your professional evaluation on whether the candidate's profile aligns with the role.
@@ -82,11 +80,6 @@ your task is to evaluate the resume against the provided job description. As a H
  assess the compatibility of the resume with the role. Give me what are the keywords that are missing
  Also, provide recommendations for enhancing the candidate's skills and identify which areas require further development.
 """
-# input_prompt4 = """
-# You are a skilled ATS (Applicant Tracking System) scanner with a deep understanding of data science and ATS functionality,
-# your task is to evaluate the resume against the provided job description. give me the percentage of match if the resume matches
-# the job description. First, the output should come as a percentage and then keywords missing and last final thoughts.
-# """
 
 input_prompt5 = """
 You are a skilled ATS (Applicant Tracking System) scanner with a deep understanding of data science and ATS functionality,
@@ -128,15 +121,6 @@ elif submit3:
         st.write(response)
     else:
         st.write("Please upload a PDF file to proceed.")
-
-# elif submit4:
-#     if uploaded_file is not None:
-#         pdf_content = input_pdf_text(uploaded_file)
-#         response = get_gemini_response_with_pdf_and_jd(input_prompt4, pdf_content, input_text)
-#         st.subheader("The Response is")
-#         st.write(response)
-#     else:
-#         st.write("Please upload a PDF file to proceed.")
 
 elif submit5:
     if uploaded_file is not None:
